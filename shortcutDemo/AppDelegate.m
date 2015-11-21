@@ -31,6 +31,11 @@
     return handled;
 }
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions
+{
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 //    Dynamic Shortcuts
@@ -50,12 +55,6 @@
     return shouldPerformAdditionalDelegateHandling;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-}
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
 }
 
@@ -66,9 +65,6 @@
     [self handledShortCutItem: self.launchedShortcutItem];
 
     self.launchedShortcutItem   = nil;
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
 }
 
 - (void) application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
